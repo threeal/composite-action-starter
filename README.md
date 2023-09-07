@@ -1,5 +1,6 @@
 # Composite Action Starter
 
+[![version](https://img.shields.io/github/v/release/threeal/composite-action-starter?style=flat-square)](https://github.com/threeal/composite-action-starter/releases)
 [![license](https://img.shields.io/github/license/threeal/composite-action-starter?style=flat-square)](./LICENSE)
 [![build status](https://img.shields.io/github/actions/workflow/status/threeal/composite-action-starter/build.yaml?branch=main&style=flat-square)](https://github.com/threeal/composite-action-starter/actions/workflows/build.yaml)
 
