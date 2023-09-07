@@ -9,3 +9,7 @@ Use this template to initialize your project with predefined file structures and
 
 - Preconfigured [GitHub Actions](https://github.com/features/actions) workflow for testing your composite action.
 - Preconfigured [Dependabot](https://docs.github.com/en/code-security/dependabot) to keep your composite action dependencies up to date.
+
+## Usage
+
+Refer to [this wiki](https://github.com/threeal/composite-action-starter/wiki) for information on how to use this template.
