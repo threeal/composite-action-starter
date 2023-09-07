@@ -1,0 +1,11 @@
+name: Mkdir Action
+description: Create a new directory
+inputs:
+  name:
+    description: Name of the directory to create
+    required: true
+runs:
+  using: composite
+  steps:
+    - shell: bash
+      run: mkdir ${{ inputs.name }}
