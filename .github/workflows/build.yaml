@@ -11,4 +11,13 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4.0.0
 
-      # Do something to build the project
+      - name: Test directory should not exist
+        run: "! test -d dir"
+
+      - name: Create test directory
+        uses: ./
+        with:
+          name: dir
+
+      - name: Test directory should exist
+        run: test -d dir
