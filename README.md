@@ -10,10 +10,11 @@
 The Composite Action Starter is a [GitHub repository template](https://docs.github.com/en/repositories/creating-and-managing-repositories/creating-a-repository-from-a-template) that provides a minimalistic boilerplate to kickstart your [GitHub composite action](https://github.com/features/actions) project.
 Use this template to initialize your project with predefined file structures and preconfigured settings recommended for a GitHub composite action project.
 
-## Features
+## Key Features
 
-- Preconfigured [GitHub Actions](https://github.com/features/actions) workflow for testing your composite action.
-- Preconfigured [Dependabot](https://docs.github.com/en/code-security/dependabot) to keep your composite action dependencies up to date.
+- Includes a predefined GitHub Actions metadata file that you can easily modify.
+- Comes with a predefined GitHub Actions workflow for testing your composite action.
+- Includes preconfigured [Dependabot](https://docs.github.com/en/code-security/dependabot) settings to keep your composite action dependencies up to date.
 
 ## Usage
 
