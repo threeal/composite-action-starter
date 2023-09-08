@@ -19,6 +19,7 @@ jobs:
       # Learn more: https://docs.github.com/en/actions/automating-builds-and-tests
 
       - name: Test directory should not exist
+        shell: bash
         run: "! test -d dir"
 
       - name: Create test directory
@@ -27,4 +28,5 @@ jobs:
           name: dir
 
       - name: Test directory should exist
+        shell: bash
         run: test -d dir
