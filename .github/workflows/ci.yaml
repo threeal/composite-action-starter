@@ -15,6 +15,9 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v4.1.1
+        with:
+          path: mkdir-action
+          sparse-checkout: action.yaml
 
       # Modify the following steps for testing your composite action.
       # Learn more: https://docs.github.com/en/actions/automating-builds-and-tests
@@ -24,7 +27,7 @@ jobs:
         run: "! test -d dir"
 
       - name: Create test directory
-        uses: ./
+        uses: ./mkdir-action
         with:
           name: dir
 
