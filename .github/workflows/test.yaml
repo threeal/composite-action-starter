@@ -18,6 +18,7 @@ jobs:
         with:
           path: mkdir-action
           sparse-checkout: action.yaml
+          sparse-checkout-cone-mode: false
 
       # Modify the following steps for testing your composite action.
       # Learn more: https://docs.github.com/en/actions/automating-builds-and-tests
