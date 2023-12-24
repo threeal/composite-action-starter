@@ -22,15 +22,15 @@ jobs:
       # Modify the following steps for testing your composite action.
       # Learn more: https://docs.github.com/en/actions/automating-builds-and-tests
 
-      - name: Test directory should not exist
+      - name: Directory Should Not Exist
         shell: bash
         run: "! test -d dir"
 
-      - name: Create test directory
+      - name: Create Directory
         uses: ./mkdir-action
         with:
           name: dir
 
-      - name: Test directory should exist
+      - name: Directory Should Exist
         shell: bash
         run: test -d dir
