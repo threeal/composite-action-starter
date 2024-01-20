@@ -5,8 +5,8 @@ name: Mkdir Action
 author: Alfi Maulana
 description: Create a new directory
 branding:
-  color: black
   icon: folder-plus
+  color: black
 inputs:
   name:
     description: Name of the directory to create
