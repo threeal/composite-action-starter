@@ -13,4 +13,12 @@ A minimalistic [GitHub repository template](https://docs.github.com/en/repositor
 
 ## Usage
 
-Refer to [this wiki](https://github.com/threeal/composite-action-starter/wiki) for information on how to use this template.
+> For detailed instructions on how to use this template, please refer to [the wiki](https://github.com/threeal/composite-action-starter/wiki).
+
+- Create a new repository from this template.
+- Make the following changes to the new repository:
+  - Replace the [LICENSE](LICENSE) file.
+  - Update the content of the [README](README.md) file.
+  - Define the action information and logic in the [action.yaml](action.yaml) file.
+  - Write tests for the action in the [test workflow](.github/workflows/test.yaml) file.
+- Finalize the action and cut the first release.
