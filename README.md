@@ -7,9 +7,9 @@ A minimalistic [GitHub repository template](https://docs.github.com/en/repositor
 
 ## Key Features
 
-- Includes a predefined GitHub Actions metadata file that you can easily modify.
-- Comes with a predefined GitHub Actions workflow for testing your composite action.
-- Includes preconfigured [Dependabot](https://docs.github.com/en/code-security/dependabot) settings to keep your composite action dependencies up to date.
+- Includes a sample metadata file for a GitHub composite action.
+- Provides a sample workflow file for testing the action.
+- Supports dependency updates with [Dependabot](https://docs.github.com/en/code-security/dependabot).
 
 ## Usage
 
