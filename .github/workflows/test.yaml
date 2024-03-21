@@ -17,7 +17,7 @@ jobs:
         uses: actions/checkout@v4.1.2
         with:
           path: mkdir-action
-          sparse-checkout: action.yaml
+          sparse-checkout: action.yml
           sparse-checkout-cone-mode: false
 
       # Modify the following steps for testing your composite action.
