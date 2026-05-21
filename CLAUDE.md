@@ -22,6 +22,7 @@ Tests run as GitHub Actions workflows (no local test runner). To trigger CI:
 - Trigger manually via the GitHub Actions UI (`workflow_dispatch`)
 
 The CI workflow has two jobs:
+
 - `check` — runs `dprint/check` to enforce formatting on Ubuntu
 - `test` — runs the action on a 3-platform matrix (Ubuntu 24.04, macOS 14, Windows 2022) with `fail-fast: false`; each job checks out only `action.yml` via sparse-checkout, then runs the action and asserts on its side effects
 
