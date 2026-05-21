@@ -11,16 +11,19 @@ This is a **GitHub template repository** for creating GitHub composite actions. 
 The entire action is defined in a single file: `action.yml`. There is no build step, no source code, and no dependencies to install — composite actions execute shell commands directly.
 
 - `action.yml` — action metadata, inputs, and bash step(s)
-- `.github/workflows/test.yaml` — integration tests run across Ubuntu, macOS, and Windows
+- `dprint.json` — formatter configuration (JSON, Markdown, YAML plugins)
+- `.github/workflows/ci.yaml` — CI pipeline: formatting check and action tests across Ubuntu, macOS, and Windows
 
 ## Testing
 
-Tests run as GitHub Actions workflows (no local test runner). To trigger tests:
+Tests run as GitHub Actions workflows (no local test runner). To trigger CI:
 
 - Push to `main` or open a pull request, or
 - Trigger manually via the GitHub Actions UI (`workflow_dispatch`)
 
-The test workflow uses a 3-platform matrix (Ubuntu 24.04, macOS 14, Windows 2022) with `fail-fast: false`. Each test job checks out only `action.yml` via sparse-checkout, then runs the action and asserts on its side effects.
+The CI workflow has two jobs:
+- `check` — runs `dprint/check` to enforce formatting on Ubuntu
+- `test` — runs the action on a 3-platform matrix (Ubuntu 24.04, macOS 14, Windows 2022) with `fail-fast: false`; each job checks out only `action.yml` via sparse-checkout, then runs the action and asserts on its side effects
 
 ## Development Workflow
 
