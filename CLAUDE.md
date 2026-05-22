@@ -24,13 +24,13 @@ Tests run as GitHub Actions workflows (no local test runner). To trigger CI:
 
 The CI workflow has two jobs:
 
-- `check` — installs dprint and Lefthook, then runs `lefthook run pre-commit --all-files` to enforce formatting on Ubuntu
-- `test` — runs the action on a 3-platform matrix (Ubuntu 24.04, macOS 14, Windows 2022) with `fail-fast: false`; each job checks out only `action.yml` via sparse-checkout, then runs the action and asserts on its side effects
+- `check` — validates the pre-commit hook on Ubuntu
+- `test` — runs the action on Ubuntu, macOS, and Windows
 
 ## Development Workflow
 
 When adapting this template:
 
 1. Edit `action.yml` to define new inputs and replace the sample bash step
-2. Update `.github/workflows/test.yaml` to test the new action's behavior
+2. Update `.github/workflows/ci.yaml` to test the new action's behavior
 3. Update `README.md` to document the new action's inputs and usage

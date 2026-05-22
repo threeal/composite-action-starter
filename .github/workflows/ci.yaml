@@ -40,9 +40,6 @@ jobs:
           sparse-checkout: action.yml
           sparse-checkout-cone-mode: false
 
-      # Modify the following steps for testing your composite action.
-      # Learn more: https://docs.github.com/en/actions/automating-builds-and-tests
-
       - name: Directory should not exist
         shell: bash
         run: "! test -d dir"
