@@ -9,7 +9,7 @@ A minimalistic [GitHub repository template](https://docs.github.com/en/repositor
 
 - Includes a sample metadata file for a GitHub composite action.
 - Provides a CI workflow for formatting checks and action tests.
-- Enforces consistent formatting with [dprint](https://dprint.dev).
+- Enforces consistent formatting with [dprint](https://dprint.dev) via [Lefthook](https://lefthook.dev) pre-commit hooks.
 - Supports dependency updates with [Dependabot](https://docs.github.com/en/code-security/dependabot).
 
 ## Usage

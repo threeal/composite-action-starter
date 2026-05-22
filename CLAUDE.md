@@ -12,6 +12,7 @@ The entire action is defined in a single file: `action.yml`. There is no build s
 
 - `action.yml` — action metadata, inputs, and bash step(s)
 - `dprint.json` — formatter configuration (JSON, Markdown, YAML plugins)
+- `lefthook.yaml` — pre-commit hook that runs `dprint fmt` on staged files and fails if any files were changed
 - `.github/workflows/ci.yaml` — CI pipeline: formatting check and action tests across Ubuntu, macOS, and Windows
 
 ## Testing
@@ -23,7 +24,7 @@ Tests run as GitHub Actions workflows (no local test runner). To trigger CI:
 
 The CI workflow has two jobs:
 
-- `check` — runs `dprint/check` to enforce formatting on Ubuntu
+- `check` — installs dprint and Lefthook, then runs `lefthook run pre-commit --all-files` to enforce formatting on Ubuntu
 - `test` — runs the action on a 3-platform matrix (Ubuntu 24.04, macOS 14, Windows 2022) with `fail-fast: false`; each job checks out only `action.yml` via sparse-checkout, then runs the action and asserts on its side effects
 
 ## Development Workflow
