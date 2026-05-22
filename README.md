@@ -1,25 +1,53 @@
-<!-- Clear the content of this file and replace it with the description of your project. -->
-<!-- Learn more: https://docs.github.com/en/repositories/managing-your-repositorys-settings-and-features/customizing-your-repository/about-readmes -->
-
 # Composite Action Starter
 
-A minimalistic [GitHub repository template](https://docs.github.com/en/repositories/creating-and-managing-repositories/creating-a-repository-from-a-template) to kickstart your [GitHub composite action](https://github.com/features/actions) project.
+A minimal template for building a [composite GitHub Action](https://docs.github.com/en/actions/sharing-automations/creating-actions/creating-a-composite-action).
 
-## Key Features
+## Getting Started
 
-- Includes a sample metadata file for a GitHub composite action.
-- Provides a CI workflow for formatting checks and action tests.
-- Enforces consistent formatting with [dprint](https://dprint.dev) via [Lefthook](https://lefthook.dev) pre-commit hooks.
-- Supports dependency updates with [Dependabot](https://docs.github.com/en/code-security/dependabot).
+Create a new repository from this template on GitHub using [this link](https://github.com/new?template_name=composite-action-starter&template_owner=threeal).
 
-## Usage
+Or clone it locally and point it at your own remote.
 
-> For detailed instructions on how to use this template, please refer to [the wiki](https://github.com/threeal/composite-action-starter/wiki).
+## Setup
 
-- Create a new repository from this template.
-- Make the following changes to the new repository:
-  - Replace the [LICENSE](LICENSE) file.
-  - Update the content of the [README](README.md) file.
-  - Define the action information and logic in the [action.yml](action.yml) file.
-  - Write tests for the action in the [test workflow](.github/workflows/test.yaml) file.
-- Finalize the action and cut the first release.
+Install [Lefthook](https://lefthook.dev/), then register the pre-commit hooks:
+
+```sh
+lefthook install
+```
+
+## Customizing the Action
+
+### `action.yml`
+
+Update the action's name, description, branding, inputs/outputs, and steps to match what your action does.
+
+### `LICENSE`
+
+The template ships with the [Unlicense](https://unlicense.org/) (public domain). Replace it with the license you want, or leave it as-is.
+
+## Development Workflow
+
+Edit `action.yml` directly. When you're ready, just commit — the pre-commit hook will automatically format all files using [dprint](https://dprint.dev/).
+
+If the hook reports errors, fix them and commit again.
+
+## CI
+
+`.github/workflows/ci.yaml` runs two jobs on every push and pull request:
+
+- **check** — validates the pre-commit hook on Ubuntu
+- **test** — runs the action on Ubuntu, macOS, and Windows
+
+Update the `test` job to exercise your action's actual inputs and verify its outputs.
+
+## Releasing
+
+Tag a release on GitHub:
+
+```sh
+git tag v1.0.0
+git push origin v1.0.0
+```
+
+Then create a GitHub Release from that tag. To make the action discoverable, [publish it to the GitHub Marketplace](https://docs.github.com/en/actions/sharing-automations/creating-actions/publishing-actions-in-github-marketplace) from the release page.
