@@ -1,0 +1,7 @@
+pre-commit:
+  piped: true
+  fail_on_changes: always
+  fail_on_changes_diff: true
+  jobs:
+    - name: fix formatting
+      run: dprint fmt
