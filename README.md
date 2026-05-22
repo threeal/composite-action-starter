@@ -8,7 +8,8 @@ A minimalistic [GitHub repository template](https://docs.github.com/en/repositor
 ## Key Features
 
 - Includes a sample metadata file for a GitHub composite action.
-- Provides a sample workflow file for testing the action.
+- Provides a CI workflow for formatting checks and action tests.
+- Enforces consistent formatting with [dprint](https://dprint.dev).
 - Supports dependency updates with [Dependabot](https://docs.github.com/en/code-security/dependabot).
 
 ## Usage
