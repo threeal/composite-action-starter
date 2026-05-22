@@ -6,7 +6,7 @@ author: Alfi Maulana
 description: Create a new directory
 branding:
   icon: folder-plus
-  color: black
+  color: white
 inputs:
   name:
     description: Name of the directory to create
