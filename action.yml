@@ -12,4 +12,4 @@ runs:
   using: composite
   steps:
     - shell: bash
-      run: mkdir ${{ inputs.name }}
+      run: mkdir "${{ inputs.name }}"
