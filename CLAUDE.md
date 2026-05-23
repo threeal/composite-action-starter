@@ -6,7 +6,7 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 ## Project Overview
 
-This is a **GitHub template repository** for creating GitHub composite actions. The sample action (`action.yml`) implements a simple `mkdir` operation as a working example. Users create a new repo from this template and replace the sample with their own action logic.
+This is a **GitHub template repository** for creating composite GitHub Actions. The sample action (`action.yml`) implements a simple `mkdir` operation as a working example. Users create a new repo from this template and replace the sample with their own action logic.
 
 ## Architecture
 
