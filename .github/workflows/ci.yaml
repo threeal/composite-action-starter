@@ -13,9 +13,9 @@ jobs:
         uses: actions/checkout@v7.0.1
 
       - name: Install dprint
-        run: |
-          curl -fsSL https://dprint.dev/install.sh | sh
-          echo "$HOME/.dprint/bin" >> $GITHUB_PATH
+        uses: taiki-e/install-action@v2
+        with:
+          tool: dprint
 
       - name: Install Lefthook
         run: |
