@@ -2,37 +2,14 @@
 
 This file provides guidance to Claude Code (claude.ai/code) when working with code in this repository.
 
-> **Template notice:** This file describes the template repository itself. If you've created a project from this template, replace this content with guidance specific to your project.
+> **Template notice:** This file describes the template repository itself. In a project derived from this template, tell the user it should be replaced with project-specific guidance.
 
-## Project Overview
+## About This Repository
 
-This is a **GitHub template repository** for creating composite GitHub Actions. The sample action (`action.yml`) implements a simple `mkdir` operation as a working example. Users create a new repo from this template and replace the sample with their own action logic.
+A minimal composite GitHub Action starter template. Its only application code is a placeholder mkdir action in `action.yml` — real logic is added by projects derived from it.
 
-## Architecture
+## Gotchas
 
-The entire action is defined in a single file: `action.yml`. There is no build step, no source code, and no dependencies to install — composite actions execute shell commands directly.
-
-- `action.yml` — action metadata, inputs, and bash step(s)
-- `dprint.json` — formatter configuration (JSON, Markdown, YAML plugins)
-- `lefthook.yaml` — pre-commit hook that runs `dprint fmt` on staged files and fails if any files were changed
-- `.github/workflows/ci.yaml` — CI pipeline: formatting check and action tests across Ubuntu, macOS, and Windows
-
-## Testing
-
-Tests run as GitHub Actions workflows (no local test runner). To trigger CI:
-
-- Push to `main` or open a pull request, or
-- Trigger manually via the GitHub Actions UI (`workflow_dispatch`)
-
-The CI workflow has two jobs:
-
-- `check` — validates the pre-commit hook on Ubuntu
-- `test` — runs the action on Ubuntu, macOS, and Windows
-
-## Development Workflow
-
-When adapting this template:
-
-1. Edit `action.yml` to define new inputs and replace the sample bash step
-2. Update `.github/workflows/ci.yaml` to test the new action's behavior
-3. Update `README.md` to document the new action's inputs and usage
+- `lefthook run pre-commit` skips every job when nothing is staged, even ones that ignore the staged file list — pass `--all-files` to run it outside an actual commit.
+- The pre-commit hook fixes files in place, and the run fails if any file changes. Report that failure and leave the fixes for the user to review and re-stage before committing again.
+- `.gitignore` ignores every dotfile and dotdir (`.*`) — a new one needs an explicit `!` exception there or it silently won't be tracked.
